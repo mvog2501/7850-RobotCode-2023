@@ -130,29 +130,29 @@ public class SwerveSubsystem extends SubsystemBase {
       SmartDashboard.putNumber("AERBL", backLeft.getCancoderPosition());
       SmartDashboard.putNumber("AERBR", backRight.getCancoderPosition());
 
-      // Turning Motor Position Debug Info
-      SmartDashboard.putNumber("FLTER", frontLeft.getTurningPosition());
-      SmartDashboard.putNumber("FRTER", frontRight.getTurningPosition());
-      SmartDashboard.putNumber("BLTER", backLeft.getTurningPosition());
-      SmartDashboard.putNumber("BRTER", backRight.getTurningPosition());
+      // // Turning Motor Position Debug Info
+      // SmartDashboard.putNumber("FLTER", frontLeft.getTurningPosition());
+      // SmartDashboard.putNumber("FRTER", frontRight.getTurningPosition());
+      // SmartDashboard.putNumber("BLTER", backLeft.getTurningPosition());
+      // SmartDashboard.putNumber("BRTER", backRight.getTurningPosition());
 
-      // Turning Motor Velocity Debug Info
-      SmartDashboard.putNumber("FLTVR", frontLeft.getTurningVelocity());
-      SmartDashboard.putNumber("FRTVR", frontRight.getTurningVelocity());
-      SmartDashboard.putNumber("BLTVR", backLeft.getTurningVelocity());
-      SmartDashboard.putNumber("BRTVR", backRight.getTurningVelocity());
+      // // Turning Motor Velocity Debug Info
+      // SmartDashboard.putNumber("FLTVR", frontLeft.getTurningVelocity());
+      // SmartDashboard.putNumber("FRTVR", frontRight.getTurningVelocity());
+      // SmartDashboard.putNumber("BLTVR", backLeft.getTurningVelocity());
+      // SmartDashboard.putNumber("BRTVR", backRight.getTurningVelocity());
 
-      // Drive Motor Encoder Debug Info
-      SmartDashboard.putNumber("FLDER", frontLeft.getDrivePosition());
-      SmartDashboard.putNumber("FRDER", frontRight.getDrivePosition());
-      SmartDashboard.putNumber("BLDER", backLeft.getDrivePosition());
-      SmartDashboard.putNumber("BRDER", backRight.getDrivePosition());
+      // // Drive Motor Encoder Debug Info
+      // SmartDashboard.putNumber("FLDER", frontLeft.getDrivePosition());
+      // SmartDashboard.putNumber("FRDER", frontRight.getDrivePosition());
+      // SmartDashboard.putNumber("BLDER", backLeft.getDrivePosition());
+      // SmartDashboard.putNumber("BRDER", backRight.getDrivePosition());
 
-      // Drive Motor Velocity Debug Info
-      SmartDashboard.putNumber("FLDVR", frontLeft.getDriveVelocity());
-      SmartDashboard.putNumber("FRDVR", frontRight.getDriveVelocity());
-      SmartDashboard.putNumber("BLDVR", backLeft.getDriveVelocity());
-      SmartDashboard.putNumber("BRDVR", backRight.getDriveVelocity());
+      // // Drive Motor Velocity Debug Info
+      // SmartDashboard.putNumber("FLDVR", frontLeft.getDriveVelocity());
+      // SmartDashboard.putNumber("FRDVR", frontRight.getDriveVelocity());
+      // SmartDashboard.putNumber("BLDVR", backLeft.getDriveVelocity());
+      // SmartDashboard.putNumber("BRDVR", backRight.getDriveVelocity());
 
     
 

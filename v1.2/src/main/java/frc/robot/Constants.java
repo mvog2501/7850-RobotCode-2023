@@ -61,25 +61,25 @@ public final class Constants {
       public static final boolean kFrontRightTurningEncoderReversed = false; // Determine our values (neg = reversed)
       public static final boolean kBackRightTurningEncoderReversed = false; // Determine our values (neg = reversed)
 
-      public static final boolean kFrontLeftDriveEncoderReversed = false; // Determine our values (neg = reversed)
+      public static final boolean kFrontLeftDriveEncoderReversed = true; // Determine our values (neg = reversed)
       public static final boolean kBackLeftDriveEncoderReversed = false; // Determine our values (neg = reversed)
-      public static final boolean kFrontRightDriveEncoderReversed = false; // Determine our values (neg = reversed)
-      public static final boolean kBackRightDriveEncoderReversed = false; // Determine our values (neg = reversed)
+      public static final boolean kFrontRightDriveEncoderReversed = true; // Determine our values (neg = reversed)
+      public static final boolean kBackRightDriveEncoderReversed = true; // Determine our values (neg = reversed)
 
       public static final int kFrontLeftDriveAbsoluteEncoderPort = 2; 
       public static final int kBackLeftDriveAbsoluteEncoderPort = 11; 
       public static final int kFrontRightDriveAbsoluteEncoderPort = 5; 
       public static final int kBackRightDriveAbsoluteEncoderPort = 8; 
 
-      // public static final boolean kFrontLeftDriveAbsoluteEncoderReversed = false; // Determine our values (neg = reversed)
+      // public static final boolean kFrontLeftDriveAbsoluteEncoderReversed = true; // Determine our values (neg = reversed)
       // public static final boolean kBackLeftDriveAbsoluteEncoderReversed = false; // Determine our values (neg = reversed)
       // public static final boolean kFrontRightDriveAbsoluteEncoderReversed = false; // Determine our values (neg = reversed)
-      // public static final boolean kBackRightDriveAbsoluteEncoderReversed = false; // Determine our values (neg = reversed)
+      // public static final boolean kBackRightDriveAbsoluteEncoderReversed = true; // Determine our values (neg = reversed)
 
-      public static final double kFrontLeftDriveAbsoluteEncoderOffsetDeg = -119.71; // Determine our values
-      public static final double kFrontRightDriveAbsoluteEncoderOffsetDeg = -194.50; // Determine our values
-      public static final double kBackLeftDriveAbsoluteEncoderOffsetDeg = -264.11; // Determine our values
-      public static final double kBackRightDriveAbsoluteEncoderOffsetDeg = -175.61; // Determine our values
+      public static final double kFrontLeftDriveAbsoluteEncoderOffsetDeg = -116 - 180; // Determine our values
+      public static final double kFrontRightDriveAbsoluteEncoderOffsetDeg = -9; // Determine our values
+      public static final double kBackLeftDriveAbsoluteEncoderOffsetDeg = -82; // Determine our values
+      public static final double kBackRightDriveAbsoluteEncoderOffsetDeg = -169 - 180; // Determine our values
 
       public static final double kPhysicalMaxSpeedMetersPerSecond = 5; // Determine our values/Guess
       public static final double kPhysicalMaxAngularSpeedRadiansPerSecond = 2 * 2 * Math.PI; // Determine our values/Guess
