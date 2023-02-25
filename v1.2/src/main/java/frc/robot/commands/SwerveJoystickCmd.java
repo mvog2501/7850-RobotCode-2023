@@ -64,7 +64,7 @@ public SwerveJoystickCmd(SwerveSubsystem swerveSubsystem,
 
     // 4. Construct desired chassis speeds (converts into the appropriate reference frames)
     ChassisSpeeds chassisSpeeds;
-    if (fieldOrientedFunction.get()) {
+    if (fieldOrientedFunction.get() == true) {
        // Relative to the field
        chassisSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(
                 xSpeed, ySpeed, turningSpeed, swerveSubsystem.getRotation2d());

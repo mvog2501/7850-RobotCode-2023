@@ -41,10 +41,10 @@ public class RobotContainer {
     
       swerveSubsystem.setDefaultCommand(new SwerveJoystickCmd(
               swerveSubsystem,
-              () -> rightStick.getRawAxis(JoystickConstants.kDriverXAxis),
+              () -> -rightStick.getRawAxis(JoystickConstants.kDriverXAxis),
               () -> -rightStick.getRawAxis(JoystickConstants.kDriverYAxis),
-              () -> rightStick.getRawAxis(JoystickConstants.kDriverRotAxis),
-              () -> !rightStick.getRawButton(JoystickConstants.kDriverFieldOrientedButtonIdx))); // Defaults to field reference
+              () -> -rightStick.getRawAxis(JoystickConstants.kDriverRotAxis),
+              () -> rightStick.getRawButton(JoystickConstants.kDriverFieldOrientedButtonIdx))); // Defaults to field reference
   
 
     // Configure the trigger bindings
@@ -55,7 +55,7 @@ public class RobotContainer {
 
   private void configureButtonBindings() {
   
-    new JoystickButton(rightStick, JoystickConstants.kDriverFieldOrientedButtonIdx).onTrue(new ZeroHeadingCmd(swerveSubsystem));
+    new JoystickButton(rightStick, JoystickConstants.kDriverZeroButton).onTrue(new ZeroHeadingCmd(swerveSubsystem));
 
   }
 

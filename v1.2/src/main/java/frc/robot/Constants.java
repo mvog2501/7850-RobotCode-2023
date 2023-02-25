@@ -56,15 +56,15 @@ public final class Constants {
       public static final int kFrontRightTurningMotorPort = 4; 
       public static final int kBackRightTurningMotorPort = 7; 
 
-      public static final boolean kFrontLeftTurningEncoderReversed = false; // Determine our values (neg = reversed)
-      public static final boolean kBackLeftTurningEncoderReversed = false; // Determine our values (neg = reversed)
-      public static final boolean kFrontRightTurningEncoderReversed = false; // Determine our values (neg = reversed)
-      public static final boolean kBackRightTurningEncoderReversed = false; // Determine our values (neg = reversed)
+      public static final boolean kFrontLeftTurningEncoderReversed = false; 
+      public static final boolean kBackLeftTurningEncoderReversed = false; 
+      public static final boolean kFrontRightTurningEncoderReversed = false; 
+      public static final boolean kBackRightTurningEncoderReversed = false;
 
-      public static final boolean kFrontLeftDriveEncoderReversed = true; // Determine our values (neg = reversed)
-      public static final boolean kBackLeftDriveEncoderReversed = false; // Determine our values (neg = reversed)
-      public static final boolean kFrontRightDriveEncoderReversed = true; // Determine our values (neg = reversed)
-      public static final boolean kBackRightDriveEncoderReversed = true; // Determine our values (neg = reversed)
+      public static final boolean kFrontLeftDriveEncoderReversed = true; 
+      public static final boolean kBackLeftDriveEncoderReversed = true; 
+      public static final boolean kFrontRightDriveEncoderReversed = false; 
+      public static final boolean kBackRightDriveEncoderReversed = true; 
 
       public static final int kFrontLeftDriveAbsoluteEncoderPort = 2; 
       public static final int kBackLeftDriveAbsoluteEncoderPort = 11; 
@@ -72,14 +72,14 @@ public final class Constants {
       public static final int kBackRightDriveAbsoluteEncoderPort = 8; 
 
       // public static final boolean kFrontLeftDriveAbsoluteEncoderReversed = true; // Determine our values (neg = reversed)
-      // public static final boolean kBackLeftDriveAbsoluteEncoderReversed = false; // Determine our values (neg = reversed)
-      // public static final boolean kFrontRightDriveAbsoluteEncoderReversed = false; // Determine our values (neg = reversed)
+      // public static final boolean kBackLeftDriveAbsoluteEncoderReversed = true; // Determine our values (neg = reversed)
+      // public static final boolean kFrontRightDriveAbsoluteEncoderReversed = true; // Determine our values (neg = reversed)
       // public static final boolean kBackRightDriveAbsoluteEncoderReversed = true; // Determine our values (neg = reversed)
 
-      public static final double kFrontLeftDriveAbsoluteEncoderOffsetDeg = -116 - 180; // Determine our values
-      public static final double kFrontRightDriveAbsoluteEncoderOffsetDeg = -9; // Determine our values
-      public static final double kBackLeftDriveAbsoluteEncoderOffsetDeg = -82; // Determine our values
-      public static final double kBackRightDriveAbsoluteEncoderOffsetDeg = -169 - 180; // Determine our values
+      public static final double kFrontLeftDriveAbsoluteEncoderOffsetDeg = -32.87; // Determine our values
+      public static final double kFrontRightDriveAbsoluteEncoderOffsetDeg = -257.08; // Determine our values
+      public static final double kBackLeftDriveAbsoluteEncoderOffsetDeg = -355.60; // Determine our values
+      public static final double kBackRightDriveAbsoluteEncoderOffsetDeg = -2.39; // Determine our values
 
       public static final double kPhysicalMaxSpeedMetersPerSecond = 5; // Determine our values/Guess
       public static final double kPhysicalMaxAngularSpeedRadiansPerSecond = 2 * 2 * Math.PI; // Determine our values/Guess
@@ -98,7 +98,10 @@ public final class Constants {
       public static final int kDriverXAxis = 0;
       public static final int kDriverYAxis = 1;
       public static final int kDriverRotAxis = 2;
-      public static final int kDriverFieldOrientedButtonIdx = 5; // Find whatever button works the best
+      public static final int kDriverFieldOrientedButtonIdx = 5;
+      public static final int kDriverZeroButton = 6;
+      
+      // Find whatever button works the best
 
       public static final double kDeadband = 0.12;
     }
