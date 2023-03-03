@@ -5,7 +5,10 @@
 package frc.robot;
 
 import java.util.List;
+
+import frc.robot.subsystems.GrabberSubsystem;
 import frc.robot.subsystems.SwerveSubsystem;
+import frc.robot.commands.ArmOpenCmd;
 import frc.robot.commands.SwerveJoystickCmd;
 import frc.robot.commands.ZeroHeadingCmd;
 import frc.robot.Constants.OperatorConstants.JoystickConstants;
@@ -34,6 +37,8 @@ public class RobotContainer {
 
   private final Joystick rightStick = new Joystick(JoystickConstants.rightStickPort);
 
+  private final GrabberSubsystem grabberSubsystem = new GrabberSubsystem();
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -46,7 +51,9 @@ public class RobotContainer {
               () -> -rightStick.getRawAxis(JoystickConstants.kDriverRotAxis),
               () -> rightStick.getRawButton(JoystickConstants.kDriverFieldOrientedButtonIdx))); // Defaults to field reference
   
-
+      grabberSubsystem.setDefaultCommand(new ArmOpenCmd(
+        grabberSubsystem,
+        () -> rightStick.getRawButton(JoystickConstants.kButton12)));
     // Configure the trigger bindings
     configureButtonBindings();
 
@@ -57,7 +64,11 @@ public class RobotContainer {
   
     new JoystickButton(rightStick, JoystickConstants.kDriverZeroButton).onTrue(new ZeroHeadingCmd(swerveSubsystem));
 
+    new JoystickButton(rightStick, 12).whileTrue(new ArmOpenCmd(grabberSubsystem, 0.1));
+    
   }
+
+ 
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
