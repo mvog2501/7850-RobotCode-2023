@@ -101,7 +101,6 @@ public final class Constants {
       public static final int kDriverFieldOrientedButtonIdx = 5;
       public static final int kDriverZeroButton = 6;
 
-      public static final int kButton12 = 12;
       
       // Find whatever button works the best
 

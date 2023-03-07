@@ -9,6 +9,8 @@ import java.util.List;
 import frc.robot.subsystems.RobotArmSubsystem;
 import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.commands.ArmUpCmd;
+import frc.robot.commands.ArmDownCmd;
+import frc.robot.commands.ArmInCmd;
 import frc.robot.commands.ArmOutCmd;
 import frc.robot.commands.SwerveJoystickCmd;
 import frc.robot.commands.ZeroHeadingCmd;
@@ -66,12 +68,18 @@ public class RobotContainer {
     new JoystickButton(rightStick, JoystickConstants.kDriverZeroButton).onTrue(new ZeroHeadingCmd(swerveSubsystem));
 
 
-    //enables arm motors when button 6 is pressed
+    //enables arm motors to go up
     new JoystickButton(rightStick, 6).onTrue(new ArmUpCmd(robotArmSubsystem));
     
 
-    //enables extension arm motors
+    //enables extension arm motor
     new JoystickButton(rightStick, 5).onTrue(new ArmOutCmd(robotArmSubsystem));
+
+    //enables retraction arm motor
+    new JoystickButton(rightStick, 7).onTrue(new ArmInCmd(robotArmSubsystem));
+
+    //enables arm motors to go down
+    new JoystickButton(rightStick, 8).onTrue(new ArmDownCmd(robotArmSubsystem));
     
   }
 
