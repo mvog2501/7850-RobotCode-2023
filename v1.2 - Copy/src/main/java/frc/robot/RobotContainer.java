@@ -6,9 +6,10 @@ package frc.robot;
 
 import java.util.List;
 
-import frc.robot.subsystems.GrabberSubsystem;
+import frc.robot.subsystems.RobotArmSubsystem;
 import frc.robot.subsystems.SwerveSubsystem;
-import frc.robot.commands.ArmOpenCmd;
+import frc.robot.commands.ArmUpCmd;
+import frc.robot.commands.ArmOutCmd;
 import frc.robot.commands.SwerveJoystickCmd;
 import frc.robot.commands.ZeroHeadingCmd;
 import frc.robot.Constants.OperatorConstants.JoystickConstants;
@@ -23,6 +24,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 
+
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -34,11 +36,9 @@ public class RobotContainer {
 
   // The robot's subsystems and commands are defined here...
   private final SwerveSubsystem swerveSubsystem = new SwerveSubsystem();
+  private final RobotArmSubsystem robotArmSubsystem = new RobotArmSubsystem();
 
   private final Joystick rightStick = new Joystick(JoystickConstants.rightStickPort);
-
-  private final GrabberSubsystem grabberSubsystem = new GrabberSubsystem();
-
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -51,9 +51,10 @@ public class RobotContainer {
               () -> -rightStick.getRawAxis(JoystickConstants.kDriverRotAxis),
               () -> rightStick.getRawButton(JoystickConstants.kDriverFieldOrientedButtonIdx))); // Defaults to field reference
   
-      grabberSubsystem.setDefaultCommand(new ArmOpenCmd(
-        grabberSubsystem,
-        () -> rightStick.getRawButton(JoystickConstants.kButton12)));
+      // RobotArmSubsystem RobotArmSubsystem;
+      // robotArmSubsystem.setDefaultCommand(new ArmOpenCmd(
+      //   robotArmSubsystem,
+      //   () -> rightStick.getRawButton(JoystickConstants.kButton12)));
     // Configure the trigger bindings
     configureButtonBindings();
 
@@ -64,7 +65,13 @@ public class RobotContainer {
   
     new JoystickButton(rightStick, JoystickConstants.kDriverZeroButton).onTrue(new ZeroHeadingCmd(swerveSubsystem));
 
-    new JoystickButton(rightStick, 12).whileTrue(new ArmOpenCmd(grabberSubsystem, 0.1));
+
+    //enables arm motors when button 6 is pressed
+    new JoystickButton(rightStick, 6).onTrue(new ArmUpCmd(robotArmSubsystem));
+    
+
+    //enables extension arm motors
+    new JoystickButton(rightStick, 5).onTrue(new ArmOutCmd(robotArmSubsystem));
     
   }
 
