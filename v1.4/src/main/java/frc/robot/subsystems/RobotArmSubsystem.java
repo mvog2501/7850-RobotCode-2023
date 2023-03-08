@@ -49,8 +49,21 @@ public class RobotArmSubsystem {
         armMotor3.set(-0.1);
     }
 
-    public void closeGrabber() {
+    public void stopVertMotors() {
+
+        armMotor1.set(0);
+        armMotor2.set(0);
 
     }
+
+    public void stopHorizMotors() {
+
+        armMotor3.set(0);
+
+    }
+
+    // public void closeGrabber() {
+
+    //}
     
 }

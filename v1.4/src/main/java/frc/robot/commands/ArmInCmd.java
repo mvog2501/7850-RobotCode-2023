@@ -35,7 +35,7 @@ public class ArmInCmd extends CommandBase {
   }
 
 
-private void addRequirements(RobotArmSubsystem robotArmSubsystem2) {
+private void addRequirements(RobotArmSubsystem robotArmSubsystem) {
   }
 
 
@@ -51,11 +51,11 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem2) {
   
 
 
-  // Returns true when the command should end.
   @Override
-  public boolean isFinished() {
-    return true;
-  }
+  public void end(boolean interrupted) {
 
+    robotArmSubsystem.stopHorizMotors();
+
+  }
   
 }
