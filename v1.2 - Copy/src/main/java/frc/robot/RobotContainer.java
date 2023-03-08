@@ -41,6 +41,7 @@ public class RobotContainer {
   private final RobotArmSubsystem robotArmSubsystem = new RobotArmSubsystem();
 
   private final Joystick rightStick = new Joystick(JoystickConstants.rightStickPort);
+  private final Joystick leftStick = new Joystick(JoystickConstants.leftStickPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -69,17 +70,17 @@ public class RobotContainer {
 
 
     //enables arm motors to go up
-    new JoystickButton(rightStick, 6).onTrue(new ArmUpCmd(robotArmSubsystem));
+    new JoystickButton(leftStick, 6).onTrue(new ArmUpCmd(robotArmSubsystem));
     
 
     //enables extension arm motor
-    new JoystickButton(rightStick, 5).onTrue(new ArmOutCmd(robotArmSubsystem));
+    new JoystickButton(leftStick, 5).onTrue(new ArmOutCmd(robotArmSubsystem));
 
     //enables retraction arm motor
-    new JoystickButton(rightStick, 7).onTrue(new ArmInCmd(robotArmSubsystem));
+    new JoystickButton(leftStick, 7).onTrue(new ArmInCmd(robotArmSubsystem));
 
     //enables arm motors to go down
-    new JoystickButton(rightStick, 8).onTrue(new ArmDownCmd(robotArmSubsystem));
+    new JoystickButton(leftStick, 8).onTrue(new ArmDownCmd(robotArmSubsystem));
     
   }
 
