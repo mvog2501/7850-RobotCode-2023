@@ -2,7 +2,7 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-import edu.wpi.first.wpilibj.Solenoid;
+
 
 // import frc.robot.commands.ArmUpCmd;
 
@@ -49,8 +49,5 @@ public class RobotArmSubsystem {
         armMotor3.set(-0.1);
     }
 
-    public void closeGrabber() {
-
-    }
     
 }
