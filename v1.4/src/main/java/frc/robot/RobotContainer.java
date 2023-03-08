@@ -5,9 +5,17 @@
 package frc.robot;
 
 import java.util.List;
+
+import frc.robot.subsystems.RobotArmSubsystem;
 import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.commands.SwerveJoystickCmd;
 import frc.robot.commands.ZeroHeadingCmd;
+import frc.robot.commands.ArmUpCmd;
+import frc.robot.commands.ArmDownCmd;
+import frc.robot.commands.ArmInCmd;
+import frc.robot.commands.ArmOutCmd;
+import frc.robot.Constants.OperatorConstants.DriveConstants;
+import frc.robot.Constants.OperatorConstants.AutoConstants;
 import frc.robot.Constants.OperatorConstants.JoystickConstants;
 // import frc.robot.Constants.OperatorConstants.LeftStickButtonPort;
 // import frc.robot.Constants.OperatorConstants.RightStickButtonPort;
@@ -18,6 +26,20 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+// import edu.wpi.first.math.controller.PIDController;
+// import edu.wpi.first.math.controller.ProfiledPIDController;
+// import edu.wpi.first.math.geometry.Pose2d;
+// import edu.wpi.first.math.geometry.Rotation2d;
+// import edu.wpi.first.math.geometry.Translation2d;
+// import edu.wpi.first.math.trajectory.Trajectory;
+// import edu.wpi.first.math.trajectory.TrajectoryConfig;
+// import edu.wpi.first.math.trajectory.TrajectoryGenerator;
+// import edu.wpi.first.wpilibj2.command.Command;
+// import edu.wpi.first.wpilibj2.command.InstantCommand;
+// import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+// import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
+// import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+// import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 
 
 /**
@@ -31,9 +53,10 @@ public class RobotContainer {
 
   // The robot's subsystems and commands are defined here...
   private final SwerveSubsystem swerveSubsystem = new SwerveSubsystem();
+  private final RobotArmSubsystem robotArmSubsystem = new RobotArmSubsystem();
 
   private final Joystick rightStick = new Joystick(JoystickConstants.rightStickPort);
-
+  private final Joystick leftStick = new Joystick(JoystickConstants.leftStickPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -57,6 +80,19 @@ public class RobotContainer {
   
     new JoystickButton(rightStick, JoystickConstants.kDriverZeroButton).onTrue(new ZeroHeadingCmd(swerveSubsystem));
 
+     //enables arm motors to go up
+     new JoystickButton(leftStick, 6).onTrue(new ArmUpCmd(robotArmSubsystem));
+    
+
+     //enables extension arm motor
+     new JoystickButton(leftStick, 5).onTrue(new ArmOutCmd(robotArmSubsystem));
+ 
+     //enables retraction arm motor
+     new JoystickButton(leftStick, 7).onTrue(new ArmInCmd(robotArmSubsystem));
+ 
+     //enables arm motors to go down
+     new JoystickButton(leftStick, 8).onTrue(new ArmDownCmd(robotArmSubsystem));
+
   }
 
   /**
@@ -64,8 +100,7 @@ public class RobotContainer {
    *
    * @return the command to run in autonomous
    */
-  //public Command getAutonomousCommand() {
-    // An example command will be run in autonomous
-    // return Autos.exampleAuto(m_exampleSubsystem);
-  //}
-}
+//   public Command getAutonomousCommand() {
+    
+//   }
+ }
