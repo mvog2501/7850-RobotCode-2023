@@ -9,6 +9,7 @@ package frc.robot;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.util.Units;
+import edu.wpi.first.math.trajectory.TrapezoidProfile;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -46,6 +47,7 @@ public final class Constants {
                 new Translation2d(-kWheelBase / 2, kTrackWidth / 2), // backLeft
                 new Translation2d(-kWheelBase / 2, -kTrackWidth / 2)); // backRight
 
+                // redo these ids at some point but it works like this
       public static final int kFrontLeftDriveMotorPort = 7; 
       public static final int kFrontRightDriveMotorPort = 4; 
       public static final int kBackLeftDriveMotorPort = 10; 
@@ -66,10 +68,10 @@ public final class Constants {
       // public static final boolean kFrontRightDriveAbsoluteEncoderReversed = true; // Determine our values (neg = reversed)
       // public static final boolean kBackRightDriveAbsoluteEncoderReversed = true; // Determine our values (neg = reversed)
 
-      public static final double kFrontLeftDriveAbsoluteEncoderOffsetRad = Math.toRadians(167.87); // Determine our values
-      public static final double kFrontRightDriveAbsoluteEncoderOffsetRad = Math.toRadians(103.00); // Determine our values
-      public static final double kBackLeftDriveAbsoluteEncoderOffsetRad = Math.toRadians(120.67); // Determine our values
-      public static final double kBackRightDriveAbsoluteEncoderOffsetRad = Math.toRadians(80.59); // Determine our values
+      public static final double kFrontLeftDriveAbsoluteEncoderOffsetRad = Math.toRadians(167.87); // backRight (its weird but it works)
+      public static final double kFrontRightDriveAbsoluteEncoderOffsetRad = Math.toRadians(103.00); // backLeft
+      public static final double kBackLeftDriveAbsoluteEncoderOffsetRad = Math.toRadians(120.67); // frontRight
+      public static final double kBackRightDriveAbsoluteEncoderOffsetRad = Math.toRadians(80.59); // frontLeft
 
       public static final double kPhysicalMaxSpeedMetersPerSecond = 10; // Determine our values/Guess
       public static final double kPhysicalMaxAngularSpeedRadiansPerSecond = 2 * 2 * Math.PI; // Determine our values/Guess
@@ -96,6 +98,21 @@ public final class Constants {
       public static final double kDeadband = 0.12;
     }
 
+    public static final class AutoConstants {
+      public static final double kMaxSpeedMetersPerSecond = DriveConstants.kPhysicalMaxSpeedMetersPerSecond / 4;
+      public static final double kMaxAngularSpeedRadiansPerSecond = 
+              DriveConstants.kPhysicalMaxAngularSpeedRadiansPerSecond / 10;
+      public static final double kMaxAccelerationMetersPerSecondSquared = 3;
+      public static final double kMaxAngularAccelerationRadiansPerSecondSquared = Math.PI / 4;
+      public static final double kPXController = 1.5;
+      public static final double kPYController = 1.5;
+      public static final double kPThetaController = 3;
+
+      public static final TrapezoidProfile.Constraints kThetaControllerConstraints = //
+              new TrapezoidProfile.Constraints(
+                      kMaxAngularSpeedRadiansPerSecond,
+                      kMaxAngularAccelerationRadiansPerSecondSquared);
+  }
     // public static class RightStickButtonPort {
     //   public static final int trigger = 1;
     //   public static final int topLeft = 2;
