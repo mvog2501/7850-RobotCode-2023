@@ -42,7 +42,7 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem2) {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    robotArmSubsystem.TestRetraction();
+    robotArmSubsystem.TestIn();
     
   }
 

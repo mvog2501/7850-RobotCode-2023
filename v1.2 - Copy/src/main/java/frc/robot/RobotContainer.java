@@ -71,16 +71,15 @@ public class RobotContainer {
 
     //enables arm motors to go up
     new JoystickButton(leftStick, 6).onTrue(new ArmUpCmd(robotArmSubsystem));
-    
+
+    //enables arm motors to go down
+    new JoystickButton(leftStick, 8).onTrue(new ArmDownCmd(robotArmSubsystem));    
 
     //enables extension arm motor
     new JoystickButton(leftStick, 5).onTrue(new ArmOutCmd(robotArmSubsystem));
 
     //enables retraction arm motor
     new JoystickButton(leftStick, 7).onTrue(new ArmInCmd(robotArmSubsystem));
-
-    //enables arm motors to go down
-    new JoystickButton(leftStick, 8).onTrue(new ArmDownCmd(robotArmSubsystem));
     
   }
 
