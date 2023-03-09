@@ -15,14 +15,14 @@ public class RobotArmSubsystem {
 
     //testing if the motors work
     public void testUp() {
-        armMotor1.set(0.1);
+        armMotor1.set(0.2);
         armMotor2.follow(armMotor1);
 
 
     }
 
     public void testDown() {
-        armMotor1.set(-0.1);
+        armMotor1.set(-0.2);
         armMotor2.follow(armMotor1);
     }
 
@@ -42,11 +42,11 @@ public class RobotArmSubsystem {
 
     //extends/retracts arm
     public void TestExtension() {
-        armMotor3.set(0.1);
+        armMotor3.set(0.5);
     }
 
     public void TestRetraction() {
-        armMotor3.set(-0.1);
+        armMotor3.set(-0.5);
     }
 
     public void stopVertMotors() {
