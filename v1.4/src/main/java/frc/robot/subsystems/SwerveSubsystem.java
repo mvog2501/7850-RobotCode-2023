@@ -9,6 +9,7 @@ import com.team2052.swervemodule.ModuleConfiguration;
 import com.team2052.swervemodule.NeoSwerverModule;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
@@ -84,6 +85,11 @@ public class SwerveSubsystem extends SubsystemBase {
       //     "Pitch of Robot",
       //     navx.getPitch()
       // );
+      
+      SmartDashboard.putNumber("Robot Heading", gyro.getAngle());
+      SmartDashboard.putString("Robot Location", getPosition().toString());
+
+      //SmartDashboard.putNumber()
 
       debug();
   }

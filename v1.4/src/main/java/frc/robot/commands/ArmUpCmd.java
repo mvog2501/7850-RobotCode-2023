@@ -54,5 +54,12 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem) {
 
   }
 
+  @Override
+  public boolean isFinished() {
+
+    return false;
+
+  }
+
   
 }

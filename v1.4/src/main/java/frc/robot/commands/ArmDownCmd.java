@@ -53,5 +53,13 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem) {
     robotArmSubsystem.stopVertMotors();
 
   }
+
+  @Override
+  public boolean isFinished() {
+
+    return false;
+
+  }
+  
   
 }

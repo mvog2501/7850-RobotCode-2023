@@ -42,7 +42,7 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem) {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    robotArmSubsystem.TestRetraction();
+    robotArmSubsystem.testRetraction();
     
   }
 
@@ -58,4 +58,10 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem) {
 
   }
   
+  @Override
+  public boolean isFinished() {
+
+    return false;
+
+  }
 }
