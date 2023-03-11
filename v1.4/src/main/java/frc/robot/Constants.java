@@ -113,6 +113,12 @@ public final class Constants {
                       kMaxAngularSpeedRadiansPerSecond,
                       kMaxAngularAccelerationRadiansPerSecondSquared);
   }
+
+    public static final class PneumaticsConstants {
+      public static final int forwardChannel = 15;
+      public static final int reverseChannel = 0;
+    }
+
     // public static class RightStickButtonPort {
     //   public static final int trigger = 1;
     //   public static final int topLeft = 2;

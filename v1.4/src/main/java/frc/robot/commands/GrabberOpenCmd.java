@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 
 /** An example command that uses an example subsystem. */
-public class GrabberCloseCmd extends CommandBase {
+public class GrabberOpenCmd extends CommandBase {
   private RobotGrabberSubsystem robotGrabberSubsystem;
   
   
@@ -23,7 +23,7 @@ public class GrabberCloseCmd extends CommandBase {
    * @param d
    * @return 
    */
-  public GrabberCloseCmd (RobotGrabberSubsystem robotGrabberSubsystem) {
+  public GrabberOpenCmd (RobotGrabberSubsystem robotGrabberSubsystem) {
     this.robotGrabberSubsystem = robotGrabberSubsystem;
    
    
@@ -41,7 +41,7 @@ private void addRequirements(RobotGrabberSubsystem robotGrabberSubsystem2) {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    robotGrabberSubsystem.closeGrabber();
+    robotGrabberSubsystem.openGrabber();
   }
 
 
