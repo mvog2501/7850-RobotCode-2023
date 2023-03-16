@@ -73,14 +73,15 @@ public final class Constants {
       public static final double kBackLeftDriveAbsoluteEncoderOffsetRad = Math.toRadians(120.67); // frontRight
       public static final double kBackRightDriveAbsoluteEncoderOffsetRad = Math.toRadians(80.59); // frontLeft
 
-      public static final double kPhysicalMaxSpeedMetersPerSecond = 10; // Determine our values/Guess
+      // Max Speeds adn Accels
+      public static final double kPhysicalMaxSpeedMetersPerSecond = 8; // Determine our values/Guess
       public static final double kPhysicalMaxAngularSpeedRadiansPerSecond = 2 * 2 * Math.PI; // Determine our values/Guess
       
       public static final double kTeleDriveMaxSpeedMetersPerSecond = kPhysicalMaxSpeedMetersPerSecond / 4;
       public static final double kTeleDriveMaxAngularSpeedRadiansPerSecond = kPhysicalMaxAngularSpeedRadiansPerSecond / 4;
               
-      public static final double kTeleDriveMaxAccelerationUnitsPerSecond = 3; // Determine our values/Guess
-      public static final double kTeleDriveMaxAngularAccelerationUnitsPerSecond = 3; // Determine our values/Guess
+      public static final double kTeleDriveMaxAccelerationUnitsPerSecond = 2; // Determine our values/Guess
+      public static final double kTeleDriveMaxAngularAccelerationUnitsPerSecond = 2; // Determine our values/Guess
     }
 
     public static class JoystickConstants {
