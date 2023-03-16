@@ -18,6 +18,7 @@ import frc.robot.commands.GrabberCloseCmd;
 import frc.robot.commands.ArmDownCmd;
 import frc.robot.commands.ArmInCmd;
 import frc.robot.commands.ArmOutCmd;
+import frc.robot.commands.ArmStop;
 import frc.robot.Constants.OperatorConstants.DriveConstants;
 import frc.robot.Constants.OperatorConstants.AutoConstants;
 import frc.robot.Constants.OperatorConstants.JoystickConstants;
@@ -92,22 +93,22 @@ public class RobotContainer {
 
 
      //enables arm motors to go up
-     new JoystickButton(leftStick, 5).onTrue(new ArmUpCmd(robotArmSubsystem));
+     new JoystickButton(leftStick, 5).whileTrue(new ArmUpCmd(robotArmSubsystem));
 
      //enables arm motors to go down
-     new JoystickButton(leftStick, 6).onTrue(new ArmDownCmd(robotArmSubsystem));
+     new JoystickButton(leftStick, 6).whileTrue(new ArmDownCmd(robotArmSubsystem));
     
 
 
      //enables extension arm motor
-     new JoystickButton(leftStick, 7).onTrue(new ArmOutCmd(robotArmSubsystem));
+     new JoystickButton(leftStick, 7).whileTrue(new ArmOutCmd(robotArmSubsystem));
  
      //enables retraction arm motor
-     new JoystickButton(leftStick, 8).onTrue(new ArmInCmd(robotArmSubsystem));
+     new JoystickButton(leftStick, 8).whileTrue(new ArmInCmd(robotArmSubsystem));
      
 
      //stops arm
-     new JoystickButton(leftStick, 9).onTrue(new ArmInCmd(robotArmSubsystem));
+     new JoystickButton(leftStick, 9).whileTrue(new ArmStop(robotArmSubsystem));
  
      
 

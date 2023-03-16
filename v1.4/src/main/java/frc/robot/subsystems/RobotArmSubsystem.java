@@ -23,8 +23,10 @@ public class RobotArmSubsystem {
     private final RelativeEncoder armMotor2Encoder;
     private final RelativeEncoder armMotor3Encoder;
 
-    private double horizSpeed = 0.5;
+    private double horizSpeed = 0.75;
     private double vertSpeed = 0.2;
+
+    private double setpoint;
 
     //creating the command
     // public void setDefaultCommand(ArmUpCmd armOpenCmd) {
@@ -48,15 +50,14 @@ public class RobotArmSubsystem {
 
 
         // Debug Info
-        SmartDashboard.putNumber("ArmMotor1 Pos", armMotor1Encoder.getPosition() * ArmConstants.kEncoderTick2Meter);
-        SmartDashboard.putNumber("ArmMotor2 Pos", armMotor2Encoder.getPosition() * ArmConstants.kEncoderTick2Meter);
-        SmartDashboard.putNumber("ArmMotor3 Pos", armMotor3Encoder.getPosition() * ArmConstants.kEncoderTick2Meter);
+        SmartDashboard.putNumber("ArmMotor1 Pos", armMotor1Encoder.getPosition());
+        SmartDashboard.putNumber("ArmMotor2 Pos", armMotor2Encoder.getPosition());
+        SmartDashboard.putNumber("ArmMotor3 Pos", armMotor3Encoder.getPosition());
         // SmartDashboard.putNumber("ArmMotor1 Velo", armMotor2Encoder.getVelocity());
         // SmartDashboard.putNumber("ArmMotor2 Velo", armMotor3Encoder.getVelocity());
         // SmartDashboard.putNumber("ArmMotor3 Velo", armMotor3Encoder.getVelocity());
 
     }
-
 
     //testing if the motors work
     public void testUp() {
@@ -89,6 +90,15 @@ public class RobotArmSubsystem {
 
         armMotor3.set(0);
 
+    }
+
+    public void setVertMotors(double speed){
+        armMotor1.set(speed);
+        armMotor2.set(-speed);
+    }
+
+    public void setHorizMotors(double speed){
+        armMotor3.set(speed);
     }
 
     
