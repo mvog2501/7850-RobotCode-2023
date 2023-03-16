@@ -104,6 +104,10 @@ public class RobotContainer {
  
      //enables retraction arm motor
      new JoystickButton(leftStick, 8).onTrue(new ArmInCmd(robotArmSubsystem));
+     
+
+     //stops arm
+     new JoystickButton(leftStick, 9).onTrue(new ArmInCmd(robotArmSubsystem));
  
      
 
@@ -111,10 +115,10 @@ public class RobotContainer {
      new JoystickButton(leftStick, 1).onTrue(new GrabberToggleCmd(robotGrabberSubsystem));
 
      //toggles grabber on
-     new JoystickButton(leftStick, 10).onTrue(new GrabberOpenCmd(robotGrabberSubsystem));
+     new JoystickButton(leftStick, 11).onTrue(new GrabberOpenCmd(robotGrabberSubsystem));
 
      //toggles grabber off
-     new JoystickButton(leftStick, 11).onTrue(new GrabberCloseCmd(robotGrabberSubsystem));
+     new JoystickButton(leftStick, 12).onTrue(new GrabberCloseCmd(robotGrabberSubsystem));
 
   }
 

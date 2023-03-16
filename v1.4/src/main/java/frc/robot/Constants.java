@@ -119,6 +119,18 @@ public final class Constants {
       public static final int reverseChannel = 0;
     }
 
+    public static final class ArmConstants {
+      public static final double kEncoderTick2Meter = 1.0 / 4096.0 * 0.128 * Math.PI;
+
+      public static double hP = 0;
+      public static double hI = 0;
+      public static double hD = 0;
+
+      public static double vP = 0;
+      public static double vI = 0;
+      public static double vD = 0;
+    }
+
     // public static class RightStickButtonPort {
     //   public static final int trigger = 1;
     //   public static final int topLeft = 2;

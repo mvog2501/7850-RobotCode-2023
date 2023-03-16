@@ -42,10 +42,14 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem) {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    robotArmSubsystem.testRetraction();
+    
     
   }
 
+  @Override
+  public void execute() {
+    robotArmSubsystem.testRetraction();
+  }
 
 
   

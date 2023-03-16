@@ -21,7 +21,7 @@ public class RobotGrabberSubsystem {
         solenoid1 = new DoubleSolenoid(14, PneumaticsModuleType.REVPH, 
         PneumaticsConstants.forwardChannel, PneumaticsConstants.reverseChannel);
 
-        solenoid1.set(Value.kReverse);
+        solenoid1.set(Value.kForward);
         
         SmartDashboard.putString("Solenoid Value", solenoid1.get().toString());
 

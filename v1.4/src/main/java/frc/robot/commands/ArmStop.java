@@ -8,12 +8,13 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.RobotArmSubsystem;
 // import frc.robot.subsystems.SwerveSubsystem;
+// import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 
 
 /** An example command that uses an example subsystem. */
-public class ArmDownCmd extends CommandBase {
+public class ArmStop extends CommandBase {
   
   private final RobotArmSubsystem robotArmSubsystem;
 
@@ -22,7 +23,7 @@ public class ArmDownCmd extends CommandBase {
    * @param robotArmSubsystem
    * @param d
    */
-  public ArmDownCmd (RobotArmSubsystem robotArmSubsystem) {
+  public ArmStop (RobotArmSubsystem robotArmSubsystem) {
     this.robotArmSubsystem = robotArmSubsystem;
   
 
@@ -41,30 +42,28 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem) {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    robotArmSubsystem.stopHorizMotors();
+    robotArmSubsystem.stopVertMotors();
     
   }
 
-  @Override
-  public void execute() {
-    robotArmSubsystem.testDown();
-  }
 
 
+  
 
-  // Returns true when the command should end.
+
   @Override
   public void end(boolean interrupted) {
 
+    robotArmSubsystem.stopHorizMotors();
     robotArmSubsystem.stopVertMotors();
 
   }
-
+  
   @Override
   public boolean isFinished() {
 
     return false;
 
   }
-  
-  
 }

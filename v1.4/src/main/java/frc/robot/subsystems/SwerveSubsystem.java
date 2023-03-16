@@ -4,11 +4,12 @@
 
 package frc.robot.subsystems;
 
-import com.kauailabs.navx.frc.AHRS;
+import com.kauailabs.navx.frc.AHRS; 
 import com.team2052.swervemodule.ModuleConfiguration;
 import com.team2052.swervemodule.NeoSwerverModule;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -30,7 +31,7 @@ public class SwerveSubsystem extends SubsystemBase {
   private final NeoSwerverModule backLeftModule;
   private final NeoSwerverModule backRightModule;
 
-  private final ADXRS450_Gyro gyro;
+  private final AHRS gyro;
 
   private final SwerveDriveOdometry odometry;
 
@@ -69,7 +70,7 @@ public class SwerveSubsystem extends SubsystemBase {
           new Rotation2d(Constants.OperatorConstants.DriveConstants.kBackRightDriveAbsoluteEncoderOffsetRad)
       );
 
-      gyro = new ADXRS450_Gyro();
+      gyro = new AHRS();
       gyro.reset();
 
       odometry = new SwerveDriveOdometry(

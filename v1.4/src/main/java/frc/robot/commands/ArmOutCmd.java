@@ -42,10 +42,13 @@ private void addRequirements(RobotArmSubsystem robotArmSubsystem) {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    robotArmSubsystem.testExtension();
     
   }
 
+  @Override
+  public void execute() {
+    robotArmSubsystem.testExtension();
+  }
 
   @Override
   public void end(boolean interrupted) {

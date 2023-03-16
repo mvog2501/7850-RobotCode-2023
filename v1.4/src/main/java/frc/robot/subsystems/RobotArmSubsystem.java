@@ -7,6 +7,7 @@ import com.revrobotics.RelativeEncoder;
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.Constants.OperatorConstants.ArmConstants;
 
 // import frc.robot.commands.ArmUpCmd;
 
@@ -42,17 +43,17 @@ public class RobotArmSubsystem {
         armMotor3Encoder = armMotor3.getEncoder();
 
         //PID controllers
-        PIDController armHorizPID = new PIDController(0, 0, 0);
-        PIDController armVertPID = new PIDController(0, 0, 0);
+        PIDController armHorizPID = new PIDController(ArmConstants.hP, ArmConstants.hI, ArmConstants.hD);
+        PIDController armVertPID = new PIDController(ArmConstants.vP, ArmConstants.vI, ArmConstants.vD);
 
 
         // Debug Info
-        SmartDashboard.putNumber("ArmMotor1 Pos", armMotor1Encoder.getPosition());
-        SmartDashboard.putNumber("ArmMotor2 Pos", armMotor1Encoder.getPosition());
-        SmartDashboard.putNumber("ArmMotor3 Pos", armMotor2Encoder.getPosition());
-        SmartDashboard.putNumber("ArmMotor1 Velo", armMotor2Encoder.getVelocity());
-        SmartDashboard.putNumber("ArmMotor2 Velo", armMotor3Encoder.getVelocity());
-        SmartDashboard.putNumber("ArmMotor3 Velo", armMotor3Encoder.getVelocity());
+        SmartDashboard.putNumber("ArmMotor1 Pos", armMotor1Encoder.getPosition() * ArmConstants.kEncoderTick2Meter);
+        SmartDashboard.putNumber("ArmMotor2 Pos", armMotor2Encoder.getPosition() * ArmConstants.kEncoderTick2Meter);
+        SmartDashboard.putNumber("ArmMotor3 Pos", armMotor3Encoder.getPosition() * ArmConstants.kEncoderTick2Meter);
+        // SmartDashboard.putNumber("ArmMotor1 Velo", armMotor2Encoder.getVelocity());
+        // SmartDashboard.putNumber("ArmMotor2 Velo", armMotor3Encoder.getVelocity());
+        // SmartDashboard.putNumber("ArmMotor3 Velo", armMotor3Encoder.getVelocity());
 
     }
 
@@ -89,6 +90,8 @@ public class RobotArmSubsystem {
         armMotor3.set(0);
 
     }
+
+    
 
    
 }
