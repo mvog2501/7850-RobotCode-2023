@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import frc.robot.subsystems.SwerveSubsystem;
 import frc.robot.Constants.OperatorConstants.DriveConstants;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
@@ -30,6 +31,8 @@ public class Autos extends SequentialCommandGroup {
         Pose2d startPose = new Pose2d(0, 0, Rotation2d.fromDegrees(0));
         // Next pose 1 meter ahead of the robot
         Pose2d nextPose = new Pose2d(1, 0, Rotation2d.fromDegrees(0));
+
+        //Pose2d nextNextPose = new Pose2d(1, 1, Rotation2d.fromDegrees(90));
 
         // Set your drivetrains odometry to the starting pose (if the starting pose is 0, 0, 0 you can skip this)
         swerveSubsystem.resetOdometry(startPose);
@@ -67,6 +70,8 @@ public class Autos extends SequentialCommandGroup {
             swerveSubsystem
         );
 
-        addCommands(swerveCommand);
+        
+
+        addCommands(swerveCommand, new InstantCommand(swerveSubsystem::pointInwards));
     }
 }

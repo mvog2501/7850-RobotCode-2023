@@ -13,6 +13,7 @@ import frc.robot.commands.SwerveJoystickCmd;
 import frc.robot.commands.ZeroHeadingCmd;
 
 import frc.robot.commands.GrabberToggleCmd;
+import frc.robot.commands.PointInwardsCmd;
 import frc.robot.commands.GrabberOpenCmd;
 import frc.robot.commands.GrabberCloseCmd;
 
@@ -103,6 +104,8 @@ public class RobotContainer {
   //zero's robot heading
     new JoystickButton(rightStick, JoystickConstants.kDriverZeroButton).onTrue(new ZeroHeadingCmd(swerveSubsystem));
 
+    // Points wheels inward
+    new JoystickButton(rightStick, 4).onTrue(new PointInwardsCmd(swerveSubsystem));
 
     //  //enables arm motors to go up
     //  new JoystickButton(leftStick, 5).whileTrue(new ArmUpCmd(robotArmSubsystem));
