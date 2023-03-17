@@ -93,6 +93,8 @@ public final class Constants {
       public static final int kDriverRotAxis = 2;
       public static final int kDriverFieldOrientedButtonIdx = 5;
       public static final int kDriverZeroButton = 10;
+
+      public static final int kArmYAxis = 1;
       
       // Find whatever button works the best
 
@@ -123,35 +125,18 @@ public final class Constants {
     public static final class ArmConstants {
       public static final double kEncoderTick2Meter = 1.0 / 4096.0 * 0.128 * Math.PI;
 
-      public static double hP = 0;
-      public static double hI = 0;
-      public static double hD = 0;
+      public static double hP = 0.5;
+      public static double hI = 0.25;
+      public static double hD = 0.25;
 
-      public static double vP = 0;
-      public static double vI = 0;
-      public static double vD = 0;
+      public static double vP = 2;
+      public static double vI = 0.5;
+      public static double vD = 0.5;
+
+      public static final double maxArmAccel = 2;
+      public static final double kArmDeadband = 0.15;
+      public static final double armMaxSpeed = 0.4;
     }
-
-    // public static class RightStickButtonPort {
-    //   public static final int trigger = 1;
-    //   public static final int topLeft = 2;
-    // }
-
-    // public static class LeftStickButtonPort {
-    //   public static final int topMiddle = 2;
-    // }
-
-    // public static class RightJoystickAxes {
-    //   public static final int rightXAxis = 0;
-    //   public static final int rightYAxis = 1;
-    //   public static final int rightZAxis = 2;
-    // }
-
-    // public static class LeftJoystickAxes {
-    //   public static final int leftXAxis = 0;
-    //   public static final int leftYAxis = 1;
-    //   public static final int leftZAxis = 2;
-    // }
 
   }
 }
