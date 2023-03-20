@@ -25,8 +25,8 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class Autos extends SequentialCommandGroup {
-    public Autos(SwerveSubsystem swerveSubsystem) {
+public class Autos2 extends SequentialCommandGroup {
+    public Autos2(SwerveSubsystem swerveSubsystem) {
         // The rotations defined in these Pose2d's are the rotations of the wheels not the robot!
         Pose2d startPose = new Pose2d(0, 0, Rotation2d.fromDegrees(0));
         // Next pose 1 meter ahead of the robot
