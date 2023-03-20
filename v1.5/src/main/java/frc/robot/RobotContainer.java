@@ -19,9 +19,11 @@ import frc.robot.commands.GrabberCloseCmd;
 
 import frc.robot.commands.Autos;
 
+import frc.robot.commands.ChargeStationAutoBalancer;
+
+
 import frc.robot.commands.ArmInCmd;
 import frc.robot.commands.ArmOutCmd;
-import frc.robot.commands.ArmStop;
 import frc.robot.commands.ArmJoystickCmd;
 import frc.robot.commands.ArmPIDCmd;
 import frc.robot.Constants.OperatorConstants.DriveConstants;
@@ -104,16 +106,14 @@ public class RobotContainer {
   //zero's robot heading
     new JoystickButton(rightStick, JoystickConstants.kDriverZeroButton).onTrue(new ZeroHeadingCmd(swerveSubsystem));
 
-    // Points wheels inward
-    new JoystickButton(rightStick, 4).onTrue(new PointInwardsCmd(swerveSubsystem));
+  // Points wheels inward
+  new JoystickButton(rightStick, 4).onTrue(new PointInwardsCmd(swerveSubsystem));
 
-    //  //enables arm motors to go up
-    //  new JoystickButton(leftStick, 5).whileTrue(new ArmUpCmd(robotArmSubsystem));
 
-    //  //enables arm motors to go down
-    //  new JoystickButton(leftStick, 6).whileTrue(new ArmDownCmd(robotArmSubsystem));
-    
+  // auto balancer
+  new JoystickButton(rightStick, 3).onTrue(new ChargeStationAutoBalancer(swerveSubsystem));
 
+  
 
      //enables extension arm motor
      new JoystickButton(leftStick, 3).whileTrue(new ArmOutCmd(robotArmSubsystem));
@@ -121,31 +121,17 @@ public class RobotContainer {
      //enables retraction arm motor
      new JoystickButton(leftStick, 5).whileTrue(new ArmInCmd(robotArmSubsystem));
      
-
-    //  //stops arm
-    //  new JoystickButton(leftStick, 9).whileTrue(new ArmStop(robotArmSubsystem));
  
      
 
      //toggles grabber on/off
      new JoystickButton(leftStick, 1).onTrue(new GrabberToggleCmd(robotGrabberSubsystem));
 
-    //  //toggles grabber on
-    //  new JoystickButton(leftStick, 11).onTrue(new GrabberOpenCmd(robotGrabberSubsystem));
-
-    //  //toggles grabber off
-    //  new JoystickButton(leftStick, 12).onTrue(new GrabberCloseCmd(robotGrabberSubsystem));
-
-       new JoystickButton(leftStick, 9).onTrue(
-                 (new ArmPIDCmd(robotArmSubsystem, -41, -35)));
-      //new JoystickButton(leftStick, 10)
-      //          .whileActiveOnce(new ElevatorPIDCmd(robotArmSubsystem, ElevatorConstants.kLoweredPosition));
-
   }
 
   private void putToDashboard() {
     autoChooser.addOption("No Auto", new InstantCommand(swerveSubsystem::stop));
-    autoChooser.addOption("1m Forward", new Autos(swerveSubsystem));
+    autoChooser.addOption("Test Auto", new Autos(swerveSubsystem));
 
     SmartDashboard.putData(autoChooser);
   }
@@ -157,6 +143,7 @@ public class RobotContainer {
    */
     public Command getAutonomousCommand() {
        swerveSubsystem.zeroGyro();
+     
        return autoChooser.getSelected();
     }
  }
