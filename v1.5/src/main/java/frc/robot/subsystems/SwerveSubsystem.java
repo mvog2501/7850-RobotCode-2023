@@ -211,9 +211,9 @@ public class SwerveSubsystem extends SubsystemBase {
   }
 
   public void pointInwards() {
-    frontLeftModule.setState(1, Rotation2d.fromDegrees(-135));
-    frontRightModule.setState(1, Rotation2d.fromDegrees(135));
-    backLeftModule.setState(1, Rotation2d.fromDegrees(-45));
-    backRightModule.setState(1, Rotation2d.fromDegrees(-45));
+    frontLeftModule.setState(0, Rotation2d.fromDegrees(-135));
+    frontRightModule.setState(0, Rotation2d.fromDegrees(135));
+    backLeftModule.setState(0, Rotation2d.fromDegrees(-45));
+    backRightModule.setState(0, Rotation2d.fromDegrees(-45));
   }
 }
